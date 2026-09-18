@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "id": "sky2002.character-guess",
+  "name": "猜角色",
+  "version": "0.1.0",
+  "description": "五选回答猜角色，Codex Luna 优先搜索，DeepSeek Anthropic 备用，支持改答与存档。",
+  "author": {"name": "sky2002", "url": "https://github.com/sky2002"},
+  "urls": {"repository": "https://github.com/sky2002/maibot-character-guess"},
+  "license": "GPL-3.0-or-later",
+  "host_application": {"min_version": "1.2.5", "max_version": "1.2.99"},
+  "sdk": {"min_version": "2.8.1", "max_version": "2.99.99"},
+  "dependencies": [
+    {"type": "python_package", "name": "httpx", "version_spec": ">=0.28,<1"},
+    {"type": "python_package", "name": "pydantic", "version_spec": ">=2.11,<3"}
+  ],
+  "capabilities": ["send.text", "llm.generate"],
+  "i18n": {"default_locale": "zh-CN", "locales_path": "_locales", "supported_locales": ["zh-CN"]},
+  "changelog": "CHANGELOG.md"
+}

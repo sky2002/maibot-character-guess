@@ -1,0 +1,12 @@
+.venv/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+.pytest-work/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+config.toml
+*.sqlite3*
+.env

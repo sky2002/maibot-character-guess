@@ -1,0 +1,41 @@
+[plugin]
+enabled = true
+config_version = "0.1.0"
+
+[game]
+question_limit = 20
+idle_minutes = 30
+accept_bare_answers = true
+model_name = ""
+task_name = "utils"
+model_timeout_seconds = 45
+prompt_locale = "zh-CN"
+
+[search]
+max_requests_per_game = 6
+max_requests_per_turn = 2
+cache_hours = 24
+max_parallel = 2
+
+[codex]
+enabled = true
+executable = "codex"
+# 填目标 Linux 机器的路径；留空使用启动 MaiBot 的用户的 CODEX_HOME。
+home = ""
+model = "gpt-5.6-luna"
+timeout_seconds = 30
+quota_retry_minutes = 60
+
+[deepseek]
+enabled = true
+# 只填写环境变量名称；密钥由启动 MaiBot 的服务环境提供。
+api_key_env = "DEEPSEEK_API_KEY"
+base_url = "https://api.deepseek.com/anthropic"
+model = "deepseek-flash"
+tool_type = "web_search_20260209"
+max_uses = 2
+timeout_seconds = 30
+max_output_tokens = 4096
+# UTC 自然日跨群共享。失败请求也消耗额度，避免未知账单被重复花费。
+daily_requests = 30
+daily_output_tokens = 122880

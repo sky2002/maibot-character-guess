@@ -5,7 +5,7 @@ from maibot_sdk import Field, PluginConfigBase
 
 class PluginSection(PluginConfigBase):
     enabled: bool = Field(default=True, description="启用猜角色插件")
-    config_version: str = Field(default="0.1.0", description="配置版本")
+    config_version: str = Field(default="0.1.1", description="配置版本")
 
 
 class GameSection(PluginConfigBase):
@@ -30,7 +30,7 @@ class CodexSection(PluginConfigBase):
     executable: str = Field(default="codex", description="Linux Codex CLI 可执行文件或绝对路径")
     home: str = Field(default="", description="独立检索用户的 CODEX_HOME，留空继承；不要填密钥")
     model: str = Field(default="gpt-5.6-luna", description="Codex 搜索模型")
-    timeout_seconds: int = Field(default=30, ge=5, le=180, description="一次 Codex 检索总超时")
+    timeout_seconds: int = Field(default=180, ge=5, le=600, description="一次 Codex 检索总超时（秒，5–600）")
     quota_retry_minutes: int = Field(default=60, ge=1, le=1440, description="未提供重置时间时，额度耗尽后的探测间隔")
 
 
@@ -41,7 +41,7 @@ class DeepSeekSection(PluginConfigBase):
     model: str = Field(default="deepseek-flash", description="支持服务端搜索的 DeepSeek 模型")
     tool_type: str = Field(default="web_search_20260209", description="服务端搜索工具版本")
     max_uses: int = Field(default=2, ge=1, le=5, description="每次请求的服务端搜索次数参数，支持情况取决于服务端")
-    timeout_seconds: int = Field(default=30, ge=5, le=180, description="一次备用检索总超时")
+    timeout_seconds: int = Field(default=180, ge=5, le=600, description="一次备用检索总超时（秒，5–600）")
     max_output_tokens: int = Field(default=4096, ge=512, le=16384, description="每次备用响应输出 Token 上限")
     daily_requests: int = Field(default=30, ge=0, le=10000, description="UTC 每日备用 HTTP 请求硬上限，0禁用请求")
     daily_output_tokens: int = Field(default=122880, ge=0, description="UTC 每日输出 Token 预留预算，0禁用请求")

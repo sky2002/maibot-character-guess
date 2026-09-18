@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "id": "sky2002.character-guess",
   "name": "猜角色",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "五选回答猜角色，Codex Luna 优先搜索，DeepSeek Anthropic 备用，支持改答与存档。",
   "author": {"name": "sky2002", "url": "https://github.com/sky2002"},
   "urls": {"repository": "https://github.com/sky2002/maibot-character-guess"},

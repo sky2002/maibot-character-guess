@@ -1,6 +1,6 @@
 [plugin]
 enabled = true
-config_version = "0.1.0"
+config_version = "0.1.1"
 
 [game]
 question_limit = 20
@@ -23,7 +23,8 @@ executable = "codex"
 # 填目标 Linux 机器的路径；留空使用启动 MaiBot 的用户的 CODEX_HOME。
 home = ""
 model = "gpt-5.6-luna"
-timeout_seconds = 30
+# 单次检索总超时，单位秒，允许 5–600。
+timeout_seconds = 180
 quota_retry_minutes = 60
 
 [deepseek]
@@ -34,7 +35,8 @@ base_url = "https://api.deepseek.com/anthropic"
 model = "deepseek-flash"
 tool_type = "web_search_20260209"
 max_uses = 2
-timeout_seconds = 30
+# 单次检索总超时，单位秒，允许 5–600。
+timeout_seconds = 180
 max_output_tokens = 4096
 # UTC 自然日跨群共享。失败请求也消耗额度，避免未知账单被重复花费。
 daily_requests = 30
